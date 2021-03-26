@@ -4,4 +4,4 @@ Formulae used to deploy command-line utilities related to OpenShift
 
 ## How do I install these formulae?
 
-Two simple steps. First add the tap `brew tap redhat-gpst/openshift` then install what you need `brew install <formula>` or to be explicit `brew install redhat-gpst/openshift/<formula>`
+Two simple steps. First add the tap `brew tap redhat-gpst/openshift` then install what you need `brew install <formula>` or to be explicit and avoid any conflicts with core or other taps use `brew install redhat-gpst/openshift/<formula>`
