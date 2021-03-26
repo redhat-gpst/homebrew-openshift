@@ -1,6 +1,6 @@
 # Homebrew for Red Hat OpenShift
 
-Formulae used to deploy command-line utilities related to OpenShift
+Formulae used to deploy command-line utilities related to OpenShift on Mac, these are not Linux compatible.
 
 ## How do I install these formulae?
 
