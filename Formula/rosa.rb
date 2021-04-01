@@ -8,7 +8,7 @@ class Rosa < Formula
   bottle :unneeded
 
   def install
-    bin.install "oc"
+    bin.install "rosa"
   end
 
   test do
