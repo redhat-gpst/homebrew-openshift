@@ -1,8 +1,8 @@
 class Rosa < Formula
   desc "Command-line tool for Red Hat OpenShift Service on AWS"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/1.0.2/rosa-macosx.tar.gz"
-  sha256 "96fae242bdad203bacec5bc26cba452cac67b7e9ba4e6c75391c98adc2ba783a"
+  url "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/rosa/1.0.5/rosa-macosx.tar.gz"
+  sha256 "454d10e41a9befbeb96c55f501707daede8206b72647313402eae3bed8e5f69c"
   license "Apache-2.0"
 
   bottle :unneeded

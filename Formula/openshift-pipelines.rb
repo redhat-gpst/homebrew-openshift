@@ -1,8 +1,8 @@
 class OpenshiftPipelines < Formula
   desc "Red Hat OpenShift Pipelines management"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/0.15.0/tkn-macos-amd64-0.15.0.tar.gz"
-  sha256 "958a51c975a8009148555b684c8e0c0c3bf471ff5d1a19f304ae87a583aa5db8"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/0.17.2/tkn-macos-amd64-0.17.2.tar.gz"
+  sha256 "921985f0a5569d6c0f2d6b58482f64462a9dcb5af4b8aaa8520ea4e4d9e2750d"
   license "Apache-2.0"
 
   bottle :unneeded
