@@ -1,8 +1,8 @@
 class OpenshiftClient < Formula
   desc "Red Hat OpenShift command-line interface tool"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.7.12/openshift-client-mac-4.7.12.tar.gz"
-  sha256 "d52699c6796cdfc3a2f8f5c71c8a63a82db7b8aeb44fdf38c431d7b6df4b8ede"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.7.17/openshift-client-mac-4.7.17.tar.gz"
+  sha256 "146057da69b72737d33c40ea5353eeea5d742e46cd54cd46b948480a2812c3d5"
   license "Apache-2.0"
 
   bottle :unneeded

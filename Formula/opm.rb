@@ -1,8 +1,8 @@
 class Opm < Formula
   desc "CLI to interact with operator-registry and build indexes of operator content"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.7.12/opm-mac-4.7.12.tar.gz"
-  sha256 "1fc207c96ab988a4a1ef3dfcb7075adc2d44051ae16c520f0ffc3fc1b003ca42"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.7.17/opm-mac-4.7.17.tar.gz"
+  sha256 "b04e335e07762726b3bfcfcf58a38a5a80fe0c74f76b908c7351f8d0072d664d"
   license "Apache-2.0"
 
   bottle :unneeded
