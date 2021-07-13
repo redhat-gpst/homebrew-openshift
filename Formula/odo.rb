@@ -1,8 +1,8 @@
 class Odo < Formula
   desc "odo is a CLI tool for running OpenShift applications in a fast and automated manner"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.2.2/odo-darwin-amd64.tar.gz"
-  sha256 "fadd7afec19c70ba9fecb917e98c296fa41a06489de9267c25d29a2fb6f653a6"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.2.3/odo-darwin-amd64.tar.gz"
+  sha256 "56e588593520d79a1e8c16309fd4ce5ab88bdae4bb3c577332dbf5cbbf8ef795"
   license "Apache-2.0"
 
   bottle :unneeded
