@@ -1,8 +1,8 @@
 class OpenshiftInstall < Formula
   desc "Red Hat OpenShift installtion program"
   homepage "https://www.openshift.com/"
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.0/openshift-install-mac-4.8.0.tar.gz"
-  sha256 "2572f92bd790f4f8d9b3659db82ebe32f33bbe68554bf12219c3446c1c5c3c67"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.3/openshift-install-mac-4.8.3.tar.gz"
+  sha256 "67acf96978fcb669f10c0a1809cc401dc5e9c7d8aa970e05f0d1f09a6a08236b"
   license "Apache-2.0"
 
   bottle :unneeded
