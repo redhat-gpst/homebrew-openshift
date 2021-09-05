@@ -1,0 +1,24 @@
+class Odo < Formula
+  desc "odo is a CLI tool for running OpenShift applications in a fast and automated manner"
+  homepage "https://www.openshift.com/"
+  license "Apache-2.0"
+
+  if OS.mac?
+    url "{{ odo_url }}/{{ odo_version }}/{{ odo_mac_binary }}"
+    sha256 "{{ odo_mac_hash }}"
+  else
+    url "{{ odo_url }}/{{ odo_version }}/{{ odo_linux_binary }}"
+    sha256 "{{ odo_linux_hash }}"
+  end
+
+  bottle :unneeded
+
+  def install
+    bin.install "odo"
+  end
+
+  test do
+    run_output = shell_output("#{bin}/odo 2>&1")
+    assert_match "OpenShift applications", run_output
+  end
+end

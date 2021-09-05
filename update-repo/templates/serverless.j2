@@ -1,0 +1,24 @@
+class Kn < Formula
+  desc "kn is a CLI tool for working with OpenShift serverless applications"
+  homepage "https://cloud.redhat.com/learn/topics/serverless"
+  license "Apache-2.0"
+
+  if OS.mac?
+    url "{{ serverless_url }}/{{ serverless_version }}/{{ serverless_mac_binary }}"
+    sha256 "{{ serverless_mac_hash }}"
+  else
+    url "{{ serverless_url }}/{{ serverless_version }}/{{ serverless_linux_binary }}"
+    sha256 "{{ serverless_linux_hash }}"
+  end
+
+  bottle :unneeded
+
+  def install
+    bin.install "odo"
+  end
+
+  test do
+    run_output = shell_output("#{bin}/kn 2>&1")
+    assert_match "Knative Serving and Eventing", run_output
+  end
+end

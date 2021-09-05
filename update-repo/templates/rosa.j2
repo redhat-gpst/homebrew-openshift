@@ -1,0 +1,24 @@
+class Rosa < Formula
+  desc "Command-line tool for Red Hat OpenShift Service on AWS"
+  homepage "https://www.openshift.com/"
+  license "Apache-2.0"
+
+  if OS.mac?
+    url "{{ rosa_url }}/{{ rosa_version }}/{{ rosa_mac_binary }}"
+    sha256 "{{ rosa_mac_hash }}"
+  else
+    url "{{ rosa_url }}/{{ rosa_version }}/{{ rosa_linux_binary }}"
+    sha256 "{{ rosa_linux_hash }}"
+  end
+
+  bottle :unneeded
+
+  def install
+    bin.install "rosa"
+  end
+
+  test do
+    run_output = shell_output("#{bin}/rosa 2>&1")
+    assert_match "Red Hat OpenShift Service on AWS", run_output
+  end
+end

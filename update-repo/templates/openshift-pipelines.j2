@@ -1,0 +1,24 @@
+class OpenshiftPipelines < Formula
+  desc "Red Hat OpenShift Pipelines management"
+  homepage "https://www.openshift.com/"
+  license "Apache-2.0"
+
+  if OS.mac?
+    url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_mac_binary }}"
+    sha256 "{{ pipeline_mac_hash }}"
+  else
+    url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_linux_binary }}"
+    sha256 "{{ pipeline_linux_hash }}"
+  end
+
+  bottle :unneeded
+
+  def install
+    bin.install "tkn"
+  end
+
+  test do
+    run_output = shell_output("#{bin}/tkn 2>&1")
+    assert_match "OpenShift", run_output
+  end
+end
