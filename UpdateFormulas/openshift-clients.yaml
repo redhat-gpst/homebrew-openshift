@@ -1,0 +1,83 @@
+- name: Get sha256sum.txt for ocp
+  ansible.builtin.uri:
+    url: "{{ ocp_url }}/{{ ocp_find_version }}/{{ hash_file }}"
+    return_content: yes
+  register: ocp_hash_file
+
+- name: Split up the downloaded sha256sum file
+  ansible.builtin.set_fact:
+    ocp_hashes: "{{ ocp_hash_file.content.split() }}"
+
+- name: Match hash for Mac client binary
+  ansible.builtin.set_fact:
+    ocp_client_mac_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_client_base }}{{ ocp_mac }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux client binary
+  ansible.builtin.set_fact:
+    ocp_client_linux_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_client_base }}{{ ocp_linux }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Mac install binary
+  ansible.builtin.set_fact:
+    ocp_install_mac_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_install_base }}{{ ocp_mac }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux install binary
+  ansible.builtin.set_fact:
+    ocp_install_linux_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_client_base }}{{ ocp_linux }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Mac opm binary
+  ansible.builtin.set_fact:
+    ocp_opm_mac_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_opm_base }}{{ ocp_mac }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux opm binary
+  ansible.builtin.set_fact:
+    ocp_opm_linux_hash: "{{ ocp_hashes[index - 1] }}"
+  when: ocp_hashes[index] is regex("^{{ ocp_opm_base }}{{ ocp_linux }}")
+  loop: "{{ ocp_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Prep OpenShift Versions
+  set_fact:
+    ocp_version_temp: "{{ ocp_hashes[1].split('-') }}"
+
+- name: Set OpenShift Versions
+  set_fact:
+    ocp_version: "{{ (ocp_version_temp | last)[:-7] }}"
+
+- name: Creating openshift-client.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/openshift-client.j2"
+    dest: "{{ formula_directory }}/openshift-client.rb"
+    mode: "0644"
+
+- name: Creating openshift-install.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/openshift-install.j2"
+    dest: "{{ formula_directory }}/openshift-install.rb"
+    mode: "0644"
+
+- name: Creating opm.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/opm.j2"
+    dest: "{{ formula_directory }}/opm.rb"
+    mode: "0644"

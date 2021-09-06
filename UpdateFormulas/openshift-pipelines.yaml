@@ -1,0 +1,39 @@
+- name: Get sha256sum.txt for ocp
+  ansible.builtin.uri:
+    url: "{{ pipeline_url }}/{{ pipeline_find_version }}/{{ hash_file }}"
+    return_content: yes
+  register: pipeline_hash_file
+
+- name: Split up the downloaded sha256sum file
+  ansible.builtin.set_fact:
+    pipeline_hashes: "{{ pipeline_hash_file.content.split() }}"
+
+- name: Match hash for Mac pipeline (tkn) binary
+  ansible.builtin.set_fact:
+    pipeline_mac_hash: "{{ pipeline_hashes[index - 1] }}"
+  when: pipeline_hashes[index] is regex("^{{ pipeline_base }}{{ pipeline_mac }}")
+  loop: "{{ pipeline_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux pipeline (tkn) binary
+  ansible.builtin.set_fact:
+    pipeline_linux_hash: "{{ pipeline_hashes[index - 1] }}"
+  when: pipeline_hashes[index] is regex("^{{ pipeline_base }}{{ pipeline_linux }}")
+  loop: "{{ pipeline_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Prep Pipeline CLI Versions
+  set_fact:
+    pipeline_version_temp: "{{ pipeline_hashes[1].split('-') }}"
+
+- name: Set Pipeline CLI Versions
+  set_fact:
+    pipeline_version: "{{ (pipeline_version_temp | last)[:-7] }}"
+
+- name: Creating openshift-pipelines.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/openshift-pipelines.j2"
+    dest: "{{ formula_directory }}/openshift-pipelines.rb"
+    mode: "0644"

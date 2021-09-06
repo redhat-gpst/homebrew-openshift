@@ -4,7 +4,7 @@
 ##   UPDATED EVERYTIME     ##
 #############################
 odo_version: "v2.3.0"
-rose_version: "1.1.1"
+rosa_version: "1.1.1"
 serverless_version: "0.22.0"
 
 ##############################
@@ -29,12 +29,13 @@ serverless_mac_binary: "kn-macos-amd64.tar.gz"
 ## Remote Server Info ##
 ########################
 ocp_v4_client_url: "https://mirror.openshift.com/pub/openshift-v4/clients"
-ocp_url: "{{ base_ocp_v4_url }}/ocp"
-opm_url: "{{ base_ocp_v4_url }}/opm"
-pipeline_url: "{{ base_ocp_v4_url }}/pipeline"
-rosa_url: "{{ base_ocp_v4_url }}/rosa"
-serverless_url: "{{ base_ocp_v4_url }}/serverless"
-hash_file_name: "sha256sum.txt"
+ocp_url: "{{ ocp_v4_client_url }}/ocp"
+odo_url: "{{ ocp_v4_client_url }}/odo"
+opm_url: "{{ ocp_v4_client_url }}/opm"
+pipeline_url: "{{ ocp_v4_client_url }}/pipeline"
+rosa_url: "{{ ocp_v4_client_url }}/rosa"
+serverless_url: "{{ ocp_v4_client_url }}/serverless"
+hash_file: "sha256sum.txt"
 
 ############################
 ## Where are the Formulas ##
@@ -56,7 +57,7 @@ ocp_find_version: "latest-4.8"
 ## Pipeline ##
 ##############
 pipeline_base: "tkn"
-pipeline_mac: "-mac-amd64-"
+pipeline_mac: "-macos-amd64"
 pipeline_linux: "-linux-amd64-"
 pipeline_file_ext: ".tar.gz"
 pipeline_find_version: "latest"

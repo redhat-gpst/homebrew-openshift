@@ -1,0 +1,27 @@
+---
+- name: Updating the Formulas
+  hosts: localhost
+  tasks:
+    - name: Include default variables
+      include_vars:
+        file: vars.yaml
+
+    - name: Including odo tasks
+      import_tasks:
+        file: odo.yaml
+
+    - name: Including rosa CLI tasks
+      import_tasks:
+        file: rosa.yaml
+
+    - name: Including serverless (kn) CLI tasks
+      import_tasks:
+        file: serverless.yaml
+
+    - name: Including pipeline (tkn) CLI tasks
+      import_tasks:
+        file: openshift-pipelines.yaml
+
+    - name: Including OpenShift client, installer, and opm CLI tasks
+      import_tasks:
+        file: openshift-clients.yaml

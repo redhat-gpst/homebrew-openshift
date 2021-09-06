@@ -1,0 +1,11 @@
+---
+- name: Loading file to test
+  hosts: localhost
+  tasks:
+    - name: Include default variables
+      include_vars:
+        file: vars.yaml
+
+    - name: Including {{ what }} tasks
+      import_tasks:
+        file: "{{ what }}.yaml"

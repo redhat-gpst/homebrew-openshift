@@ -20,3 +20,8 @@ From this directory run the following command to update the files:
 ```bash
 ansible-playbook main.yaml
 ```
+
+To test changes to a set of tasks use (replace rosa with whatever name):
+```bash
+ansible-playbook -e what=rosa test.yaml
+```

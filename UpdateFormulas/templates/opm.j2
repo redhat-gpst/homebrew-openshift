@@ -5,10 +5,10 @@ class Opm < Formula
 
   if OS.mac?
   url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_opm_base }}{{ ocp_mac }}{{ ocp_version }}{{ ocp_file_ext }}"
-    sha256 "{{ ocp_client_mac_hash }}"
+    sha256 "{{ ocp_opm_mac_hash }}"
   else
     url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_opm_base }}{{ ocp_linux }}{{ ocp_version }}{{ ocp_file_ext }}"
-    sha256 "{{ ocp_client_linux_hash }}"
+    sha256 "{{ ocp_opm_linux_hash }}"
   end
 
   bottle :unneeded

@@ -1,0 +1,31 @@
+- name: Get sha256sum.txt for rosa
+  ansible.builtin.uri:
+    url: "{{ rosa_url }}/{{ rosa_version }}/{{ hash_file }}"
+    return_content: yes
+  register: rosa_hash_file
+
+- name: Split up the downloaded sha256sum file
+  ansible.builtin.set_fact:
+    rosa_hashes: "{{ rosa_hash_file.content.split() }}"
+
+- name: Match hash for Mac rosa binary
+  ansible.builtin.set_fact:
+    rosa_mac_hash: "{{ rosa_hashes[index - 1] }}"
+  when: rosa_mac_binary == rosa_hashes[index]
+  loop: "{{ rosa_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux rosa binary
+  ansible.builtin.set_fact:
+    rosa_linux_hash: "{{ rosa_hashes[index - 1] }}"
+  when: rosa_linux_binary == rosa_hashes[index | int]
+  loop: "{{ rosa_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Creating rosa.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/rosa.j2"
+    dest: "{{ formula_directory }}/rosa.rb"
+    mode: "0644"

@@ -1,0 +1,31 @@
+- name: Get sha256sum.txt for odo
+  ansible.builtin.uri:
+    url: "{{ odo_url }}/{{ odo_version }}/{{ hash_file }}"
+    return_content: yes
+  register: odo_hash_file
+
+- name: Split up the downloaded sha256sum file
+  ansible.builtin.set_fact:
+    odo_hashes: "{{ odo_hash_file.content.split() }}"
+
+- name: Match hash for Mac odo binary
+  ansible.builtin.set_fact:
+    odo_mac_hash: "{{ odo_hashes[index - 1] }}"
+  when: odo_mac_binary == odo_hashes[index]
+  loop: "{{ odo_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Match hash for Linux odo binary
+  ansible.builtin.set_fact:
+    odo_linux_hash: "{{ odo_hashes[index - 1] }}"
+  when: odo_linux_binary == odo_hashes[index | int]
+  loop: "{{ odo_hashes }}"
+  loop_control:
+    index_var: index
+
+- name: Creating odo.rb Forumla from template
+  ansible.builtin.template:
+    src: "templates/odo.j2"
+    dest: "{{ formula_directory }}/odo.rb"
+    mode: "0644"
