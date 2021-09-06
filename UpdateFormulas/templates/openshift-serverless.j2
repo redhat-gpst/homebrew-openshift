@@ -1,4 +1,4 @@
-class Kn < Formula
+class OpenshiftServerless < Formula
   desc "kn is a CLI tool for working with OpenShift serverless applications"
   homepage "https://cloud.redhat.com/learn/topics/serverless"
   license "Apache-2.0"
