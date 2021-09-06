@@ -14,7 +14,7 @@ class OpenshiftServerless < Formula
   bottle :unneeded
 
   def install
-    bin.install "odo"
+    bin.install "kn"
   end
 
   test do
