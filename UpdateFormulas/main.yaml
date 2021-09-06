@@ -10,18 +10,18 @@
       import_tasks:
         file: odo.yaml
 
-    - name: Including rosa CLI tasks
+    - name: Including ROSA CLI tasks
       import_tasks:
         file: rosa.yaml
-
-    - name: Including serverless (kn) CLI tasks
-      import_tasks:
-        file: serverless.yaml
-
-    - name: Including pipeline (tkn) CLI tasks
-      import_tasks:
-        file: openshift-pipelines.yaml
 
     - name: Including OpenShift client, installer, and opm CLI tasks
       import_tasks:
         file: openshift-clients.yaml
+
+    - name: Including OpenShift Pipelines (tkn) CLI tasks
+      import_tasks:
+        file: openshift-pipelines.yaml
+
+    - name: Including OpenShift Serverless (kn) CLI tasks
+      import_tasks:
+        file: openshift-serverless.yaml
