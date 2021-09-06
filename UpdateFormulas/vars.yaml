@@ -57,7 +57,7 @@ ocp_find_version: "latest-4.8"
 ## Pipeline ##
 ##############
 pipeline_base: "tkn"
-pipeline_mac: "-macos-amd64"
+pipeline_mac: "-macos-amd64-"
 pipeline_linux: "-linux-amd64-"
 pipeline_file_ext: ".tar.gz"
 pipeline_find_version: "latest"
