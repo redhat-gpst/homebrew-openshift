@@ -2,6 +2,8 @@
   ansible.builtin.uri:
     url: "{{ pipeline_url }}/{{ pipeline_find_version }}/{{ hash_file }}"
     return_content: yes
+  retries: 3
+  delay: 3
   register: pipeline_hash_file
 
 - name: Split up the downloaded sha256sum file

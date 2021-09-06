@@ -1,7 +1,31 @@
+- name: Figuring out the latest odo version - step 1 - getting list
+  ansible.builtin.uri:
+    url: "{{ odo_url }}?F=0"
+    return_content: yes
+  retries: 3
+  delay: 3
+  register: odo_dir_list
+
+- name: Getting version - step 2 - parsing html
+  ansible.builtin.set_fact:
+    odo_temp_1: "{{ odo_dir_list.content.split() }}"
+
+- name: Getting version - step 2 - parsing html (again)
+  ansible.builtin.set_fact:
+    odo_temp_2: "{{ item.split('/') }}"
+  loop: "{{ odo_temp_1 }}"
+  when: item is regex("^v[0-9]*\\.[0-9]*\\.[0-9]*")
+
+- name: Getting version - step 2 - parsing html (again)
+  ansible.builtin.set_fact:
+    odo_version: "{{ odo_temp_2.0 }}"
+
 - name: Get sha256sum.txt for odo
   ansible.builtin.uri:
     url: "{{ odo_url }}/{{ odo_version }}/{{ hash_file }}"
     return_content: yes
+  retries: 3
+  delay: 3
   register: odo_hash_file
 
 - name: Split up the downloaded sha256sum file

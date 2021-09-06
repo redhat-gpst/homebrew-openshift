@@ -1,19 +1,9 @@
-#############################
-## Other Binary's Versions ##
-##    THESE NEED TO BE     ##
-##   UPDATED EVERYTIME     ##
-#############################
-odo_version: "v2.3.0"
-rosa_version: "1.1.1"
-serverless_version: "0.22.0"
-
 ##############################
 ## Programmatically defined ##
 ##############################
 # *_mac_hash
 # *_linux_hash
-# pipeline_version
-# ocp_version
+# *_version
 
 ########################
 ## Other Binary Names ##

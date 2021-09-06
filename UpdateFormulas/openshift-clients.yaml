@@ -2,6 +2,8 @@
   ansible.builtin.uri:
     url: "{{ ocp_url }}/{{ ocp_find_version }}/{{ hash_file }}"
     return_content: yes
+  retries: 3
+  delay: 3
   register: ocp_hash_file
 
 - name: Split up the downloaded sha256sum file
