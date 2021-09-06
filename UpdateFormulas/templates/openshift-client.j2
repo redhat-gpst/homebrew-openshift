@@ -4,10 +4,10 @@ class OpenshiftClient < Formula
   license "Apache-2.0"
 
   if OS.mac?
-    url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_client_mac_binary }}"
+  url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_client_base }}{{ ocp_mac }}{{ ocp_version }}{{ ocp_file_ext }}"
     sha256 "{{ ocp_client_mac_hash }}"
   else
-    url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_install_linux_binary }}"
+    url "{{ ocp_url }}/{{ ocp_version }}/{{ ocp_client_base }}{{ ocp_linux }}{{ ocp_version }}{{ ocp_file_ext }}"
     sha256 "{{ ocp_client_linux_hash }}"
   end
 

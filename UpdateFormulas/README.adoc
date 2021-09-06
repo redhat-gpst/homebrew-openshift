@@ -1,0 +1,22 @@
+# How-To Update the Formulas
+
+###ALL WORK SHOULD BE DONE IN THIS DIRECTORY
+
+In this directory review and update any values in vars.yml you need. Pay particular attention to these:
+```yaml
+odo_version: "v2.3.0"
+rose_version: "1.1.1"
+serverless_version: "0.22.0"
+```
+
+If it is a major version change like 4.8 to 4.9 then you might want to do the following:
+```bash
+git mv ../Formula/openshift-client.rb ../Formula/openshift-client@4.8.rb
+git mv ../Formula/openshift-install.rb ../Formula/openshift-install@4.8.rb
+git mv ../Formula/opm.rb ../Formula/opm@4.8.rb
+```
+
+From this directory run the following command to update the files:
+```bash
+ansible-playbook main.yaml
+```

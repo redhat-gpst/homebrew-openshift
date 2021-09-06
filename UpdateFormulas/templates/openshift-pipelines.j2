@@ -1,13 +1,13 @@
 class OpenshiftPipelines < Formula
   desc "Red Hat OpenShift Pipelines management"
-  homepage "https://www.openshift.com/"
+  homepage "https://cloud.redhat.com/learn/topics/ci-cd"
   license "Apache-2.0"
 
   if OS.mac?
-    url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_mac_binary }}"
+  url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_base }}{{ pipeline_mac }}{{ pipeline_version }}{{ pipeline_file_ext }}"
     sha256 "{{ pipeline_mac_hash }}"
   else
-    url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_linux_binary }}"
+    url "{{ pipeline_url }}/{{ pipeline_version }}/{{ pipeline_base }}{{ pipeline_linux }}{{ pipeline_version }}{{ pipeline_file_ext }}"
     sha256 "{{ pipeline_linux_hash }}"
   end
 

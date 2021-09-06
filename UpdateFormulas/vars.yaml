@@ -7,6 +7,14 @@ odo_version: "v2.3.0"
 rose_version: "1.1.1"
 serverless_version: "0.22.0"
 
+##############################
+## Programmatically defined ##
+##############################
+# *_mac_hash
+# *_linux_hash
+# pipeline_version
+# ocp_version
+
 ########################
 ## Other Binary Names ##
 ########################
