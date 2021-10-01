@@ -4,11 +4,11 @@ class OpenshiftServerless < Formula
   license "Apache-2.0"
 
   if OS.mac?
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/serverless/0.22.0/kn-macos-amd64.tar.gz"
-    sha256 "266e16853783ef1ff65b66d4a1920ba7404385be3e52e3ea00b3dbdd586872f9"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/serverless/0.23.2/kn-macos-amd64.tar.gz"
+    sha256 "9b2cb0131f045d391756c09ed6eee92186cec4a4ac948ac2be2a0f325c6a3aa2"
   else
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/serverless/0.22.0/kn-linux-amd64.tar.gz"
-    sha256 "92940d28f3262055f243ac32b0c0fd83e84942dd6a7080885e03814ab145f79a"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/serverless/0.23.2/kn-linux-amd64.tar.gz"
+    sha256 "29db6d13e570c7d1884952a0eaf1889f4402e9c930568075e47b41fd2799f2f3"
   end
 
   bottle :unneeded

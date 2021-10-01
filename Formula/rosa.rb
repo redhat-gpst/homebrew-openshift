@@ -4,11 +4,11 @@ class Rosa < Formula
   license "Apache-2.0"
 
   if OS.mac?
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/1.1.1/rosa-macosx.tar.gz"
-    sha256 "70c3e7dbe9140f1b1d952a297329bfb0eb01be4077fcb94f53d80574aabac828"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/1.1.2/rosa-macosx.tar.gz"
+    sha256 "aa334a4746b619ae4623bd87242254eedb1f472bea1f722dbeb2e5832e81b1d7"
   else
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/1.1.1/rosa-linux.tar.gz"
-    sha256 "183eac244d6ff7371b17854c8b0b0a1eee0c33a149e818739ab423fe88b2ef21"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/1.1.2/rosa-linux.tar.gz"
+    sha256 "d684fa110451ee5bcd9497f922699a3b8401279781b92428d6c607de12f160d3"
   end
 
   bottle :unneeded

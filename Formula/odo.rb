@@ -4,11 +4,11 @@ class Odo < Formula
   license "Apache-2.0"
 
   if OS.mac?
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.3.0/odo-darwin-amd64.tar.gz"
-    sha256 "0831f81c00e1f7201763669c36058e685957cfb2489fb23f271cdd090abf868b"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.3.1/odo-darwin-amd64.tar.gz"
+    sha256 "e851c190ed06e2dc2049f07fcf595b0d5ad2ac409032397c44c4964e89cbe196"
   else
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.3.0/odo-linux-arm64.tar.gz"
-    sha256 "9ad77b2f3ceec82bc2bed4c0a490ae98a5fcde5e7c1a90c823f3685e7e345aec"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/odo/v2.3.1/odo-linux-arm64.tar.gz"
+    sha256 "8163a6917dd5fc67743e321ab2fdfb1144e5523f9fe11676a4dbfa1b6342f51e"
   end
 
   bottle :unneeded
