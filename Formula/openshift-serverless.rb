@@ -11,8 +11,6 @@ class OpenshiftServerless < Formula
     sha256 "29db6d13e570c7d1884952a0eaf1889f4402e9c930568075e47b41fd2799f2f3"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "kn"
   end

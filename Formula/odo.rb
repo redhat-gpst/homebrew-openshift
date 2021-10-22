@@ -11,8 +11,6 @@ class Odo < Formula
     sha256 "8163a6917dd5fc67743e321ab2fdfb1144e5523f9fe11676a4dbfa1b6342f51e"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "odo"
   end

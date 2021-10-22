@@ -11,8 +11,6 @@ class OpenshiftPipelines < Formula
     sha256 "cf4e3c8d480569279a8e11804955f8cb910f05e8b57160eff0585532a8423ee0"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "tkn"
   end

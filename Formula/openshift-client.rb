@@ -11,8 +11,6 @@ class OpenshiftClient < Formula
     sha256 "80e7afa26ac8c6ceefe3738e65e1efac588fbbdd0425510b938f89336819e67d"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "oc"
   end

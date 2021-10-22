@@ -11,8 +11,6 @@ class Rosa < Formula
     sha256 "d684fa110451ee5bcd9497f922699a3b8401279781b92428d6c607de12f160d3"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "rosa"
   end
