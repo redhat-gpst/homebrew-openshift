@@ -11,8 +11,6 @@ class OpenshiftPipelines < Formula
     sha256 "{{ pipeline_linux_hash }}"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "tkn"
   end

@@ -11,8 +11,6 @@ class OpenshiftInstall < Formula
     sha256 "{{ ocp_install_linux_hash }}"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "openshift-install"
   end

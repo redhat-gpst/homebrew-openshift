@@ -11,8 +11,6 @@ class OpenshiftServerless < Formula
     sha256 "{{ serverless_linux_hash }}"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "kn"
   end

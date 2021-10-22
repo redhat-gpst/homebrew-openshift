@@ -11,8 +11,6 @@ class Opm < Formula
     sha256 "{{ ocp_opm_linux_hash }}"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "darwin-amd64-opm" => "opm"
   end
