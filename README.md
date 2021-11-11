@@ -25,12 +25,12 @@ brew install redhat-gpst/openshift/rosa
 
 * [OpenShift Pipelines command line tool](https://docs.openshift.com/container-platform/4.8/cicd/pipelines/understanding-openshift-pipelines.html) -- [its the tkn CLI from Tekton](https://tekton.dev/)
 ```
-brew install redhat-gpst/openshift/openshift-install
+brew install redhat-gpst/openshift/openshift-pipelines
 ```
 
 * [OpenShift Serverless command line tool](https://docs.openshift.com/container-platform/4.8/installing/index.html) -- [its kn from Knative](https://knative.dev/docs/)
 ```
-brew install redhat-gpst/openshift/openshift-install
+brew install redhat-gpst/openshift/openshift-serverless
 ```
 
 * [odo - Developer focused CLI for Kubernetes and OpenShift](https://developers.redhat.com/products/odo/overview)
