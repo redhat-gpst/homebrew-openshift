@@ -4,11 +4,11 @@ class OpenshiftClient < Formula
   license "Apache-2.0"
 
   if OS.mac?
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.17/openshift-client-mac-4.8.17.tar.gz"
-    sha256 "7de347f9d00fdf6494efaa08f129addb4a1346360d3515f6df69aaa0d190a71c"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.23/openshift-client-mac-4.8.23.tar.gz"
+    sha256 "2700365cf4b31e1f4ab988f5eef26cca832dfcdf4639e8b1e6b63d068c9d8c2e"
   else
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.17/openshift-client-linux-4.8.17.tar.gz"
-    sha256 "2381ff56868f042942be6e1aaeaa87949485288604adbdd37d61e55b6e358d1c"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.8.23/openshift-client-linux-4.8.23.tar.gz"
+    sha256 "9005af0e02d1ff97a800337f1e10304397932dc46c6ef0e6c26088206522aa86"
   end
 
   def install
