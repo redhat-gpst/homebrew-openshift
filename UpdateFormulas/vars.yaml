@@ -41,7 +41,7 @@ ocp_opm_base: "opm"
 ocp_mac: "-mac-"
 ocp_linux: "-linux-"
 ocp_file_ext: ".tar.gz"
-ocp_find_version: "latest-4.8"
+ocp_find_version: "stable"
 
 ##############
 ## Pipeline ##
