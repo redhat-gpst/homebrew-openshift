@@ -12,6 +12,7 @@
 
 - name: Match hash for Mac pipeline (tkn) binary
   ansible.builtin.set_fact:
+    pipeline_mac_file: "{{ pipeline_hashes[index] }}"
     pipeline_mac_hash: "{{ pipeline_hashes[index - 1] }}"
   when: pipeline_hashes[index] is regex("^{{ pipeline_base }}{{ pipeline_mac }}")
   loop: "{{ pipeline_hashes }}"
@@ -20,6 +21,7 @@
 
 - name: Match hash for Linux pipeline (tkn) binary
   ansible.builtin.set_fact:
+    pipeline_linux_file: "{{ pipeline_hashes[index] }}"
     pipeline_linux_hash: "{{ pipeline_hashes[index - 1] }}"
   when: pipeline_hashes[index] is regex("^{{ pipeline_base }}{{ pipeline_linux }}")
   loop: "{{ pipeline_hashes }}"
@@ -28,7 +30,7 @@
 
 - name: Prep Pipeline CLI Versions
   set_fact:
-    pipeline_version_temp: "{{ pipeline_hashes[1].split('-') }}"
+    pipeline_version_temp: "{{ pipeline_linux_file.split('-') }}"
 
 - name: Set Pipeline CLI Versions
   set_fact:

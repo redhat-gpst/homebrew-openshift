@@ -4,10 +4,10 @@ class OpenshiftPipelines < Formula
   license "Apache-2.0"
 
   if OS.mac?
-  url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline//tkn-macos-amd64-.tar.gz"
+  url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/0.21.0/tkn-macos-amd64-0.21.0.tar.gz"
     sha256 "7b47c7dbe08b97ad525a7fbf1830f789e2887a5f78af6659b1dcde7848bc1095"
   else
-    url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline//tkn-linux-amd64-.tar.gz"
+    url "https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/0.21.0/tkn-linux-amd64-0.21.0.tar.gz"
     sha256 "a3dfa8417fe16f74126c45d79e407ab229a7c2f33362686432eae2221dbbf683"
   end
 
